@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Financeiro</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div id="loginScreen" class="login-container">
+
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <input
+            type="text"
+            id="usuario"
+            placeholder="Usuário"
+        >
+
+        <input
+            type="password"
+            id="senha"
+            placeholder="Senha"
+        >
+
+        <button onclick="login()">
+            Entrar
+        </button>
+
+        <p id="erroLogin"></p>
+    </div>
+
+</div>
+
+<div class="container" id="dashboard">
+
+    <h1>Dashboard Financeiro</h1>
+
+    <div class="cards">
+
+        <div class="card receita">
+            <h3>Receitas</h3>
+            <p id="receitas">R$ 0,00</p>
+        </div>
+
+        <div class="card despesa">
+            <h3>Despesas</h3>
+            <p id="despesas">R$ 0,00</p>
+        </div>
+
+        <div class="card saldo">
+            <h3>Saldo</h3>
+            <p id="saldo">R$ 0,00</p>
+        </div>
+
+    </div>
+
+    <div class="formulario">
+        <input type="date" id="data">
+
+        <input type="number" id="valor" placeholder="Valor">
+
+        <select id="categoria">
+            <option>Ifood</option>
+            <option>99</option>
+            <option>Uber</option>
+            <option>Alimentação</option>
+            <option>Manutenção</option>
+            <option>Outros</option>
+        </select>
+
+        <select id="tipo">
+            <option value="receita">Pagamento</option>
+            <option value="despesa">Gastos</option>
+        </select>
+
+        <button onclick="adicionarTransacao()">
+            Adicionar
+        </button>
+    </div>
+
+    <div class="grafico">
+        <canvas id="grafico"></canvas>
+    </div>
+
+    <div class="historico">
+        <h2>Histórico</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Categoria</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody id="lista"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
